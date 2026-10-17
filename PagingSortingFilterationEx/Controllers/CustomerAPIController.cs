@@ -18,9 +18,9 @@ namespace PagingSortingFilterationEx.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetCustomers()
+        public async Task<IActionResult> GetCustomers([FromQuery]QueryObject obj)
         {
-            return Ok( await this.repo.GetAll());
+            return Ok( await this.repo.GetAll(obj));
         }
 
 
